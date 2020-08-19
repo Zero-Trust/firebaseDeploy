@@ -12,6 +12,18 @@ function initializePj () {
 
 }
 
+args=$@
+fbrc=("${args[@]:1}")
+rcfile=("${args[@]:1}")
 
+mkdir public
+for a in "${args[@]}"
+do
+  mv a public/
+done
+
+firebase deploy 
 
 exit
+
+
