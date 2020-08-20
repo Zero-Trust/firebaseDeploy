@@ -9,8 +9,9 @@ set -o errexit   # set -e : exit the script if any statement returns a non-true 
 
 function initializePj () {
   firebase init
-
 }
+
+
 
 args=$@
 fbrc=("${args[@]:1}")
@@ -19,7 +20,7 @@ rcfile=("${args[@]:1}")
 mkdir public
 for a in "${args[@]}"
 do
-  mv a public/
+  mv $a public/
 done
 
 firebase deploy 
